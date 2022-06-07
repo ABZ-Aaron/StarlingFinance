@@ -3,11 +3,14 @@ from sqlite3 import Error
 import csv
 import glob
 from datetime import datetime
+import os
+
+# Current path of file
+cwd = os.path.dirname(os.path.abspath(__file__))
 
 def main():
-
+    """Main function"""
     conn = create_connection()
-
     with conn:
         create_table(conn)
         insert_data(conn)
@@ -16,7 +19,7 @@ def create_connection():
     """Connect to or create our SQLite Database"""
     conn = None
     try:
-        conn = sqlite3.connect('starling.db', detect_types=sqlite3.PARSE_DECLTYPES | sqlite3.PARSE_COLNAMES)
+        conn = sqlite3.connect(f'{cwd}/starling.db', detect_types=sqlite3.PARSE_DECLTYPES | sqlite3.PARSE_COLNAMES)
         return conn
     except Error as e:
         print(e)
