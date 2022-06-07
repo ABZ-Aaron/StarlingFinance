@@ -51,7 +51,7 @@ def create_table(conn):
 def insert_data(conn):
     """extract csv data and insert into sqlite database"""
     to_db = []
-    for fname in glob.glob('statements/*csv'):
+    for fname in glob.glob(f'{cwd}/statements/*csv'):
         with open(fname, 'r') as f:
             dr = csv.DictReader(f)
             for i in dr:
