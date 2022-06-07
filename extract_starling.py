@@ -54,6 +54,7 @@ file = gspread.authorize(credentials_google)
 
 # Starling API String
 balance_endpoint = f'https://api.starlingbank.com/api/v2/accounts/{account_id}/balance'
+testing_endpoing = f'https://api-sandbox.starlingbank.com/'
 
 # Request Data from Starling
 headers = {"Authorization": f'Bearer {bearer}'}
