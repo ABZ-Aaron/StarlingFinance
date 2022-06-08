@@ -13,7 +13,7 @@ target_csv = target + "/CSV"
 
 # Config data for Starling
 config = configparser.ConfigParser()
-config_file = f'{cwd}/config.conf'
+config_file = f'{cwd}/config/config.conf'
 config.read(config_file)
 account_id = config['starling_config']['account_id']
 bearer = config['starling_config']['bearer']

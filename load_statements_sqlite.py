@@ -19,7 +19,7 @@ def create_connection():
     """Connect to or create our SQLite Database"""
     conn = None
     try:
-        conn = sqlite3.connect(f'{cwd}/starling.db', detect_types=sqlite3.PARSE_DECLTYPES | sqlite3.PARSE_COLNAMES)
+        conn = sqlite3.connect(f'{cwd}/database/starling.db', detect_types=sqlite3.PARSE_DECLTYPES | sqlite3.PARSE_COLNAMES)
         return conn
     except Error as e:
         print(e)

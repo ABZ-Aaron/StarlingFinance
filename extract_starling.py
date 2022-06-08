@@ -39,7 +39,7 @@ cwd = os.path.dirname(os.path.abspath(__file__))
 
 # Config data for Starling
 config = configparser.ConfigParser()
-config_file = f'{cwd}/config.conf'
+config_file = f'{cwd}/config/config.conf'
 config.read(config_file)
 account_id = config['starling_config']['account_id']
 bearer = config['starling_config']['bearer']
@@ -48,7 +48,7 @@ bearer = config['starling_config']['bearer']
 scope = ['https://www.googleapis.com/auth/spreadsheets', 
          'https://www.googleapis.com/auth/drive']
 
-json_file = f"{cwd}/google_auth.json"
+json_file = f"{cwd}/config/google_auth.json"
 credentials_google = ServiceAccountCredentials.from_json_keyfile_name(json_file, scope)
 file = gspread.authorize(credentials_google) 
 
